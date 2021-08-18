@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Családgondozó portál</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://kit.fontawesome.com/4539bef601.js" crossorigin="anonymous"></script>
+    <link href="css.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-danger myNavMargin">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i id="homeButton" class="fas fa-home"></i>HÁLÓ</a>
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="gPercek.html">Gondozási percek</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gondozottak listája</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Vezetéknév</th>
+                            <th>Keresztnév</th>
+                            <th>Település</th>
+                            <th>Műveletek</th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>1</td>
+                        <td>Kiss</td>
+                        <td>János</td>
+                        <td>Mezőszilas</td>
+                        <td>
+                            <div class="btn-group">
+                                <button class="btn btn-warning">módosítás</button>
+                                <button class="btn btn-secondary">törlés</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
