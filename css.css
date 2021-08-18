@@ -18,3 +18,8 @@
 #gondozottakTabla {
     font-size: 12px;
 }
+
+.noPaddingMobile {
+    padding-left: 0;
+    padding-right: 0;
+}
