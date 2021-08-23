@@ -47,13 +47,15 @@
                         </div>
                         <div class="form-group formPadd">
                             <label for="utazas">Utazással töltött percek: </label>
-                            <input id="utazas" class="form-control" name="utazas" type="number" value="0" max="30">
+                            <input id="utazas" class="form-control" name="utazas" type="number" max="30">
                         </div>
-                        <button class="formPadd" type="button">Küldés</button>
+                        <button class="formPadd btn btn-primary" onclick="idoSzamol()">Küldés</button>
                     </fieldset>
                 </form>
+                A feladattal eltöltött idő: <span id="feladatIdo">0</span> perc.
             </div>
         </div>
     </div>
+    <script src="gPercek.js"></script>
 </body>
 </html>
