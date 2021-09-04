@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Családgondozó portál</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,43 +15,42 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html"><i id="homeButton" class="fas fa-home"></i>HÁLÓ</a>
             <ul class="navbar-nav me-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="gPercek.html">Gondozási percek</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Gondozottak listája</a>
-              </li>
-            </ul>
-        </div>
-    </nav>
+                <li class="nav-item">
+                    <a class="nav-link" href="gPercek.html">Gondozási percek</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gondozottak listája</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <div class="d-flex justify-content-center">
+        
+        <button type="button" class="btn btn-success" onclick="ujGondozottSor()"><i class="far fa-file ikonJobbraPadding"></i>Új gondozott</button>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col noPaddingMobile">
-                <table class="table" id="gondozottakTabla">
+                <form>
+                <table class="table table-striped" id="gondozottakTabla">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Vezetéknév</th>
                             <th>Keresztnév</th>
+                            <th>Életkor</th>
                             <th>Település</th>
                             <th>Műveletek</th>
                         </tr>
                     </thead>
-                    <tr>
-                        <td>1</td>
-                        <td>Kiss</td>
-                        <td>János</td>
-                        <td>Mezőszilas</td>
-                        <td>
-                            <div class="btn-group">
-                                <button class="btn btn-warning"><i class="fas fa-edit"></i></button>
-                                <button class="btn btn-secondary"><i class="fas fa-trash-alt"></i></button>
-                            </div>
-                        </td>
-                    </tr>
+                    <tbody>
+                        
+                    </tbody>
                 </table>
+                </form>
             </div>
         </div>
     </div>
+    <script src="gondozottak.js"></script>    
 </body>
 </html>
