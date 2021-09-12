@@ -27,6 +27,7 @@
     <div class="container" id="gondozasForm">
         <div class="row">
             <div class="col">
+                <h4 class="formPadd">Gondozási Percek Rögzítése</h4>
                 <form action="" id="gondozasRecord">
                     <fieldset>
                         <div class="form-group formPadd">
@@ -52,7 +53,10 @@
                     </fieldset>
                 </form>
  
-                <div class="formPadd"><button class="formPadd btn btn-primary" onclick="gondozasRekordBeolvasas()">Rögzítés</button></div>
+                <div class="formPadd">
+                    <button id="sorRogzites" class="formPadd btn btn-danger" onclick="gondozasRekordBeolvasas()">Rögzítés</button>
+                    <button id="adatTorles" class="formPadd btn btn-danger" onclick="adatokTorlese()" disabled>Adatok Törlése</button>
+                </div>
 
                 <table id="gPercekTable" class="">
                     <thead>

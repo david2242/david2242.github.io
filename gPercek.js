@@ -12,14 +12,15 @@ function gondozasRekordBeolvasas() {    //1. resz beolvasas
         utazas: kepernyoAdatok[4].value
         })
     
-    tablazatFrissites(gPercekTabla);    
+    tablazatFrissites(gPercekTabla);   
+    if (gPercekTabla.length) document.querySelector("#adatTorles").removeAttribute("disabled");
 }
 
 function tablazatFrissites() {
     document.querySelector("table thead tr").innerHTML="";
     document.querySelector("table tbody").innerHTML="";
-    if (document.querySelector("div.col button:nth-child(4)")) {
-        document.querySelector("div.col button:nth-child(4)").remove();
+    if (document.querySelector("button#kuldes")) {
+        document.querySelector("button#kuldes").remove();
     }
     tablaFejlec();
     tablaTartalom();
@@ -53,20 +54,31 @@ function tablaTartalom() {
 function kuldesButtonCreator() {
     let parent = document.querySelector("div.col");
     let child = document.createElement("button");
-    child.setAttribute("class", "formPadd btn btn-primary");
+    child.setAttribute("class", "formPadd btn btn-outline-danger");
+    child.setAttribute("id", "kuldes");
     child.setAttribute("onclick", "gPercekTableSend()");
     child.innerHTML="Küldés";
     parent.appendChild(child);
 }
 
-Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "plusz.egy.cim@gmail.com",
-    Password : "1F17E6B09377C17EE599ED985750C9A76D68",
-    To : 'plusz.egy.cim@gmail.com',
-    From : "plusz.egy.cim@gmail.com",
-    Subject : "This is the subject",
-    Body : "And this is the body"
-}).then(
-  message => alert(message)
-);
+function gPercekTableSend() {
+    let tablazat = document.querySelector("#gPercekTable");
+    Email.send({
+        SecureToken : "d86fb17b-6098-4423-af84-b72f7bde5624",
+        To : 'plusz.egy.cim@gmail.com',
+        From : "plusz.egy.cim@gmail.com",
+        Subject : "gondozási percek",
+        Body : tablazat.outerHTML
+    }).then(
+      message => {
+          alert(message)
+          location.reload();
+          return false;
+      }
+    );
+}
+
+function adatokTorlese() {
+    location.reload();
+    return false;
+}
