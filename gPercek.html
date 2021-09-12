@@ -27,7 +27,7 @@
     <div class="container" id="gondozasForm">
         <div class="row">
             <div class="col">
-                <form action="">
+                <form action="" id="gondozasRecord">
                     <fieldset>
                         <div class="form-group formPadd">
                             <label for="gondozottNeve">Gondozott neve: </label>
@@ -42,20 +42,32 @@
                             <input id="erkezesIdo" class="form-control" name="erkezesIdo" type="time">
                         </div>
                         <div class="form-group formPadd">
-                            <label for="tavozasIdo">Távozás ideje: </label>
-                            <input name="tavozasIdo" class="form-control" type="time">
+                            <label for="leaveTime">Távozás ideje: </label>
+                            <input id="leaveTime" class="form-control" name="leaveTime" type="time">
                         </div>
                         <div class="form-group formPadd">
                             <label for="utazas">Utazással töltött percek: </label>
                             <input id="utazas" class="form-control" name="utazas" type="number" max="30">
                         </div>
-                        <button class="formPadd btn btn-primary" onclick="idoSzamol()">Küldés</button>
                     </fieldset>
                 </form>
-                A feladattal eltöltött idő: <span id="feladatIdo">0</span> perc.
+ 
+                <div class="formPadd"><button class="formPadd btn btn-primary" onclick="gondozasRekordBeolvasas()">Rögzítés</button></div>
+
+                <table id="gPercekTable" class="">
+                    <thead>
+                        <tr>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
     <script src="gPercek.js"></script>
+    <script src="smtp.js"></script>
 </body>
 </html>

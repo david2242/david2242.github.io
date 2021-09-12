@@ -18,9 +18,12 @@ function ujButtonGroup(sorSz) {
     ujButtonGroup.className = "btn-group";
     parentOfButtonGroup.appendChild(ujButtonGroup);
     let parentOfTwoButtons = document.querySelector("tbody>tr:nth-last-of-type(1) div");
+    parentOfTwoButtons.addEventListener("click", function(event) {
+        event.preventDefault()
+    });
     let szerkesztoGomb = document.createElement("button");
     szerkesztoGomb.className = "btn btn-warning";
-    szerkesztoGomb.setAttribute("onclick", "szerkesztes(" + sorSz + ")")
+    szerkesztoGomb.setAttribute("onclick", "inputInserter(" + (sorSz+1) + ")")
     szerkesztoGomb.innerHTML = '<i class="fas fa-edit"></i>'
     let torlesGomb = document.createElement("button");
     torlesGomb.className = "btn btn-secondary";
@@ -29,6 +32,8 @@ function ujButtonGroup(sorSz) {
     parentOfTwoButtons.appendChild(torlesGomb);
 
 }
+
+let tablazatForm = document.querySelector("#adatTabla")
 
 function ujCella(parent, content) {
     let parentElement = parent;
@@ -61,6 +66,7 @@ function szerkesztes(szerkElement) {
 }
 
 function inputInserter(sorSzam) {
+    document.querySelector("tbody tr:nth-child(sorSzam)").remove();
     let szulo = document.querySelector("tbody");
     let gyerek = document.createElement("tr");
     let beillesztesEzele = document.querySelector("tbody tr:nth-child(" + sorSzam + ")");
