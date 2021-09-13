@@ -65,7 +65,7 @@ function gPercekTableSend() {
     let tablazat = document.querySelector("#gPercekTable");
     Email.send({
         SecureToken : "d86fb17b-6098-4423-af84-b72f7bde5624",
-        To : 'plusz.egy.cim@gmail.com',
+        To : 'nagykatalin.halo@gmail.com',
         From : "plusz.egy.cim@gmail.com",
         Subject : "gondozási percek",
         Body : tablazat.outerHTML
