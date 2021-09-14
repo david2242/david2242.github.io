@@ -8,24 +8,74 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://kit.fontawesome.com/4539bef601.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css.css" >
-    <link rel="stylesheet" href="tempWidget.css">
+    <link href="css.css" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-danger myNavMargin">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="main.html"><i id="homeButton" class="fas fa-home"></i>HÁLÓ</a>
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gondozási percek</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Gondozottak listája</a>
+              </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container" id="gondozasForm">
+        <div class="row">
+            <div class="col">
+                <div id="gondPercFelirat">
+                    <h5 id="gondPercFelirat" class="formPadd">Gondozási Percek Rögzítése</h5>
+                </div>
+                <form autocomplete="off" action="" id="gondozasRecord">
+                    <fieldset>
+                        <div class="form-group formPadd autocomplete">
+                            <label for="gondozottNeve">Gondozott neve: </label>
+                            <input id="gondozottNeve" class="form-control" name="gondozottNeve" type="text" placeholder="Gondozott neve">
+                        </div>
+                        <div class="form-group formPadd">
+                            <label for="datum">Ellátás dátuma: </label>
+                            <input id="datum" class="form-control" name="datum" type="date">
+                        </div>
+                        <div class="form-group formPadd">
+                            <label for="erkezesIdo">Érkezés ideje: </label>                      
+                            <input id="erkezesIdo" class="form-control" name="erkezesIdo" type="time">
+                        </div>
+                        <div class="form-group formPadd">
+                            <label for="leaveTime">Távozás ideje: </label>
+                            <input id="leaveTime" class="form-control" name="leaveTime" type="time">
+                        </div>
+                        <div class="form-group formPadd">
+                            <label for="utazas">Utazással töltött percek: </label>
+                            <input id="utazas" class="form-control" name="utazas" type="number" max="30">
+                        </div>
+                    </fieldset>
+                </form>
+ 
+                <div class="formPadd">
+                    <button id="sorRogzites" class="formPadd btn btn-danger" onclick="gondozasRekordBeolvasas()">Rögzítés</button>
+                    <button id="adatTorles" class="formPadd btn btn-danger" onclick="adatokTorlese()" disabled>Adatok Törlése</button>
+                </div>
 
-  <nav class="navbar navbar-expand-sm navbar-dark bg-danger myNavMargin">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><i id="homeButton" class="fas fa-home"></i>HÁLÓ</a>
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="gPercek.html">Gondozási percek</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gondozottak.html">Gondozottak listája</a>
-          </li>
-         </ul>
-      </div>
-  </nav>
-<script src="tempWidget.js"></script>
+                <table id="gPercekTable" class="">
+                    <thead>
+                        <tr>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="gPercek.js"></script>
+    <script src="smtp.js"></script>
+    <script src="autocomplete.js"></script>
+    <script>autocomplete(document.getElementById("gondozottNeve"), gondozottak);</script>
 </body>
 </html>

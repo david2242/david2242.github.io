@@ -2,6 +2,8 @@ let gPercekKeys = ["név", "dátum", "érkezés", "távozás", "utazás"]
 
 let gPercekTabla = [];
 
+let gondozottak = ["Bernáth Mihály", "Dániel István", "Matolcsi Istvánné", "Müller Anna", "Szalai Istvánné", "Toldi Józsefné", "Barabás Józsefné", "Nagy János", "Nagy Sándor", "Pribék Józsefné", "Somogyi Józsefné", "Tollas Józsefné", "Zámbó Jánosné", "Arany Józsefné", "Halasi Lajosné", "Vámosi Istvánné", "Körmendi Józsefné", "Horváth Jánosné", "Buruncz László", "Kálmán Imréné", "Németh Mihályné", "Balogh János Mihályné", "Tömör Gyuláné", "Bóka Ferencné", "Gődér Józsefné", "Imre István", "Boros Jánosné", "Gazdag Teréz", "Horváth Istvánné", "Horváth Sándorné", "Kocsi Imréné"];
+
 function gondozasRekordBeolvasas() {    //1. resz beolvasas
     let kepernyoAdatok = document.querySelectorAll("input")
     gPercekTabla.push({
